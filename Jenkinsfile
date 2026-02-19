@@ -14,7 +14,7 @@ pipeline {
         REGION = "us-east-1"
     }
     options {
-        timeout(time: 1, unit: 'HOURS') 
+        timeout(time: 30, unit: 'HOURS') 
         disableConcurrentBuilds()
     }
      parameters {
@@ -30,6 +30,7 @@ pipeline {
                     withAWS(region:'us-east-1',credentials:'aws-creds'){
                     sh """
                         aws eks update-kubeconfig --region ${REGION} --name ${PROJECT}-${params.deploy_to}
+                        kubectl get nodes
                     """
 
                     }
