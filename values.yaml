@@ -1,5 +1,5 @@
 deployment:
-  imageRepo: joindevops/catalogue
+  imageRepo: 022779559954.dkr.ecr.us-east-1.amazonaws.com/roboshop/catalogue
   imageVersion: v1
 service:
   servicePort: 8080 # default value
